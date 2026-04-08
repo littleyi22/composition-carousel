@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會考作文命盤</title>
+    <!-- 引入飄逸的書法字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <header>
+            <h1>會考作文命盤</h1>
+            <p class="subtitle">天命如此，妙筆生花</p>
+        </header>
+
+        <main>
+            <!-- 轉盤區塊 -->
+            <div class="wheel-container">
+                <canvas id="wheel" width="500" height="500"></canvas>
+                <div class="pointer">▼</div>
+                <button id="spin-btn">抽取命題</button>
+            </div>
+
+            <!-- 結果顯示區塊 -->
+            <div id="result-display" class="hidden">
+                <h2>抽中題目</h2>
+                <p id="result-text"></p>
+                <button id="close-result-btn">確認</button>
+            </div>
+
+            <!-- 歷史紀錄 -->
+            <section class="history-section">
+                <h3>抽取紀錄</h3>
+                <ul id="history-list">
+                    <!-- 紀錄會動態生成於此 -->
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <button id="admin-btn"><i class="fas fa-cog"></i> 後台編輯</button>
+            <p>奕鈞老師製作 &copy; 2026 | Version 1.2</p>
+        </footer>
+    </div>
+
+    <!-- 後台編輯彈出視窗 -->
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>編輯抽籤選項</h2>
+            <p class="hint">每行一個選項</p>
+            <textarea id="options-textarea" rows="15"></textarea>
+            <div class="modal-actions">
+                <button id="save-options-btn" class="primary-btn">儲存修改</button>
+                <button id="cancel-admin-btn" class="secondary-btn">取消</button>
+                <button id="reset-default-btn" class="danger-btn">恢復預設</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
